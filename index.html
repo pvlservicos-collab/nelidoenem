@@ -226,6 +226,14 @@ main > .wrap > .empty{color:var(--on-bg-muted)}
 .ess .yr{font-weight:500;font-size:13px;color:var(--accent-2);letter-spacing:.02em}
 .ess .tm{font-size:15px;line-height:1.45;font-weight:400}
 .ess .tt{font-size:13px;color:var(--muted)}
+.ess .tt b{color:var(--ink);font-weight:500}
+.ess .yr{display:flex;align-items:center;gap:8px}
+.ess .nota,.ess .mod{font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px;letter-spacing:.03em}
+.ess .nota{background:var(--ok);color:#fff}
+.ess .mod{background:var(--panel-2);color:var(--muted)}
+.ess.real{border-color:var(--ok)}
+.autor{font-size:13.5px;color:var(--muted);margin:4px 0 14px;max-width:70ch}
+.autor b{color:var(--ink);font-weight:500}
 .rd{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:24px;align-items:start}
 .rd-text>.eyebrow,.rd-text>.theme,.rd-text>.disclaim{color:var(--on-bg-muted)}
 .rd-text h1{font-weight:400;font-size:clamp(24px,4.4vw,32px);line-height:1.2;margin:6px 0 4px;text-wrap:balance;color:var(--on-bg)}
@@ -1079,10 +1087,10 @@ function renderRedacao(main){
   if(!REDACOES.length){ main.innerHTML = `<div class="wrap"><div class="empty"><div class="spin" style="margin:0 auto 12px"></div>Carregando redações…</div></div>`; dataReady.then(()=>view==='R'&&renderView()); return; }
   if(essayOpen==null){
     main.innerHTML = `<div class="wrap wide">
-      <div class="lib-head"><div class="eyebrow">Biblioteca</div><h1>Redações nota máxima</h1>
-      <p>Vinte redações-modelo sobre temas reais do ENEM, com cada parte marcada por cor: introdução, tese, repertório, argumentos, conectivos e os cinco elementos da proposta de intervenção.</p></div>
-      <div class="lib">${REDACOES.map((r,i)=>`<button type="button" class="ess" data-i="${i}"><span class="yr">ENEM ${esc(r.ano)}</span><span class="tm">${esc(r.tema)}</span><span class="tt">${esc(r.titulo)}</span></button>`).join('')}</div>
-      <p class="disclaim">Textos escritos pelo nelidoenem para estudo, seguindo as cinco competências da <a href="${LINKS.cartilha}" target="_blank" rel="noopener">Cartilha do Participante (INEP)</a>. Não são redações de candidatos reais.</p>
+      <div class="lib-head"><div class="eyebrow">Biblioteca</div><h1>Redações nota 1000</h1>
+      <p>Redações reais que tiraram nota 1000 no ENEM, com o nome de quem escreveu, e redações-modelo sobre temas de outros anos. Cada parte vem marcada por cor: introdução, tese, repertório, argumentos, conectivos e os cinco elementos da proposta de intervenção.</p></div>
+      <div class="lib">${REDACOES.map((r,i)=>`<button type="button" class="ess${r.real?' real':''}" data-i="${i}"><span class="yr">ENEM ${esc(r.ano)}${r.real?`<span class="nota">Nota ${r.nota}</span>`:'<span class="mod">Modelo</span>'}</span><span class="tm">${esc(r.tema)}</span><span class="tt">${r.real?'Redação de <b>'+esc(r.autor)+'</b>':esc(r.titulo)}</span></button>`).join('')}</div>
+      <p class="disclaim">As redações com nome e <b>Nota 1000</b> são de candidatos reais e foram divulgadas pela imprensa; o link da fonte está em cada texto. As marcadas como <b>Modelo</b> foram escritas pelo nelidoenem para estudo, seguindo as cinco competências da <a href="${LINKS.cartilha}" target="_blank" rel="noopener">Cartilha do Participante (INEP)</a>, e não são de candidatos reais.</p>
     </div>`;
     main.querySelectorAll('.ess').forEach(b => b.onclick = () => { essayOpen = +b.dataset.i; essayFocus=null; renderView(); window.scrollTo(0,0); });
     return;
@@ -1104,9 +1112,10 @@ function renderRedacao(main){
     <button class="back" type="button" id="backLib">← Todas as redações</button>
     <div class="rd">
       <div class="rd-text">
-        <div class="eyebrow">ENEM ${esc(r.ano)} · Redação-modelo</div>
+        <div class="eyebrow">ENEM ${esc(r.ano)} · ${r.real?'Redação nota '+r.nota:'Redação-modelo'}</div>
         <h1>${esc(r.titulo)}</h1>
         <p class="theme">Tema: ${esc(r.tema)}</p>
+        ${r.real?`<p class="autor">${esc(r.bio)} <a href="${esc(r.fonte)}" target="_blank" rel="noopener">Fonte do texto</a></p>`:''}
         <div class="paper${essayFocus==='conn'?' focus-conn':essayFocus?' focus':''}${showLabels?'':' hide-labels'}" id="paper">${paras}</div>
         <p class="disclaim">Toque em um item da legenda para destacar só aquela parte do texto.</p>
         <div class="legend c5after"><div class="box"><h3>Proposta de intervenção</h3><div class="c5">${c5}</div></div></div>
