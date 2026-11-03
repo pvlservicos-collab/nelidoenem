@@ -2,3 +2,9 @@
 .vercel
 .DS_Store
 Thumbs.db
+node_modules
+.env
+.env*.local
+nelifeliz.html
+nelifeliz_files/
+nelitriste.png
