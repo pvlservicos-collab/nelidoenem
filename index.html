@@ -162,7 +162,10 @@ main{padding-block:24px 80px}
 .xsec{background:var(--panel);border:1px solid var(--panel-line);box-shadow:var(--shadow);border-radius:20px;padding:18px 22px}
 .xsec h3{margin:0 0 10px;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:400}
 .xsec p{margin:0 0 .6em;max-width:70ch}
-.resumo{font-size:17px;line-height:1.65}
+.resumo{font-size:18px;line-height:1.5;margin:0}
+.resumo strong{color:var(--accent-2);font-weight:600}
+ul.fatos{margin:0;padding-left:20px;display:grid;gap:6px;line-height:1.5}
+ul.fatos li::marker{color:var(--accent)}
 ol.passos{margin:0;padding:0;list-style:none;counter-reset:p;display:grid;gap:12px}
 ol.passos li{counter-increment:p;display:grid;grid-template-columns:28px 1fr;gap:10px;line-height:1.65}
 ol.passos li::before{content:counter(p);width:26px;height:26px;border-radius:50%;background:var(--accent);color:var(--accent-ink);font:500 12.5px/26px var(--f-ui);text-align:center}
@@ -896,12 +899,13 @@ function parseExp(t){
 const lines = s => String(s||'').split('\n').map(x=>x.trim()).filter(Boolean);
 const inl = s => esc(s).replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>').replace(/(^|[^*])\*([^*]+)\*/g,'$1<em>$2</em>');
 function promptFor(q, a){
-  const alts = q.alts.map(([L,t,img]) => `${L}) ${t ? t.replace(/!\[\]\(img:[\w-]+\)/g,'[figura]') : ''}${img?' [alternativa em imagem]':''}`).join('\n');
-  const ctx = (q.ctx||'').replace(/!\[\]\(img:[\w-]+\)/g,'[figura]');
-  const isCalc = a==='M' || a==='N';
-  return `Você é professor de cursinho pré-ENEM explicando uma questão para um estudante brasileiro do ensino médio. Escreva em português do Brasil, com linguagem clara e direta.
+  // mesmo texto de scripts/prompt.mjs
+  const alts = q.alts.map(([L, t, img]) => `${L}) ${t ? t.replace(/!\[\]\(img:[\w-]+\)/g, '[figura]') : ''}${img ? ' [alternativa em imagem]' : ''}`).join('\n');
+  const ctx = (q.ctx || '').replace(/!\[\]\(img:[\w-]+\)/g, '[figura]');
+  const isCalc = a === 'M' || a === 'N';
+  return `Você explica questões do ENEM para estudantes do ensino médio. Português do Brasil.
 
-QUESTÃO — ENEM ${q.y}, ${AREAS[a].full}, questão ${q.n}${q.lang?` (${q.lang})`:''}
+QUESTÃO — ENEM ${q.y}, ${AREAS[a].full}, questão ${q.n}${q.lang ? ` (${q.lang})` : ''}
 Texto-base:
 ${ctx || '(sem texto-base; veja as figuras enviadas)'}
 
@@ -910,28 +914,25 @@ Alternativas:
 ${alts}
 
 GABARITO OFICIAL DO INEP: ${q.ok}. Nunca contradiga esse gabarito.
-${q.files.length || /\[figura\]/.test(ctx+alts) ? 'As figuras da questão vão anexadas como imagens, na ordem em que aparecem.' : ''}
+${q.files.length || /\[figura\]/.test(ctx + alts) ? 'As figuras da questão vão anexadas como imagens, na ordem em que aparecem.' : ''}
 
-REGRAS
-- Nada de justificativa vazia ("é a correta porque é"). Cada passo precisa se apoiar em um trecho do texto-base, em um dado da questão ou em um conceito da disciplina, dito com clareza.
-- ${isCalc ? 'Se houver conta, mostre TODAS as contas no bloco [ANOTACOES], como o rascunho de um aluno: uma operação por linha, com os dados, a fórmula, a substituição e o resultado. Use × para multiplicação, ÷ ou / para divisão e ^ para potência. A última linha é o resultado final começando com "=> ".' : 'Em [ANOTACOES], escreva apenas "nenhuma", a menos que a questão exija conta.'}
-- Não invente links, números de lei, datas ou autores. Cite apenas documentos oficiais ou obras de referência de que você tenha certeza.
+ESTILO: curto como uma resposta do Google. Fatos, não redação.
+- Frases curtas e diretas. Sem introdução, sem "vamos analisar", sem repetir o enunciado.
+- Coloque em **negrito** só o fato decisivo (um termo, número ou trecho curto).
+- Cada passo se apoia em um trecho do texto, um dado da questão ou um conceito. Nada de "é a correta porque é".
+- Não invente leis, datas, autores ou números.
 
-Responda EXATAMENTE com os blocos abaixo, nesta ordem, cada um começando pelo marcador entre colchetes em linha própria:
+Responda EXATAMENTE com estes blocos, nesta ordem, cada marcador em linha própria:
 [RESUMO]
-Uma ou duas frases com a ideia central que leva à alternativa ${q.ok}.
+Uma frase de no máximo 25 palavras que dá a resposta: alternativa ${q.ok} e o fato que decide.
 [PASSOS]
-De 3 a 6 linhas, cada uma um passo do raciocínio, começando com "- ".
+De 2 a 4 linhas começando com "- ", cada uma com no máximo 15 palavras.
 [ANOTACOES]
-Linhas do rascunho, ou "nenhuma".
+${isCalc ? 'Se houver conta: só as contas, uma por linha, no máximo 6 linhas, com × para multiplicação, / para divisão e ^ para potência. A última linha começa com "=> " e traz o resultado. Se não houver conta, escreva "nenhuma".' : 'nenhuma'}
 [ALTERNATIVAS]
-Uma linha por alternativa INCORRETA, no formato "B: motivo do erro".
+Uma linha por alternativa INCORRETA, formato "letra: motivo", no máximo 10 palavras cada.
 [HABILIDADE]
-O código da habilidade da Matriz de Referência do ENEM (INEP) para a área de ${AREAS[a].full} que a questão mais cobra, no formato "H00 | como a questão cobra essa habilidade, em uma frase".
-[CONCEITO]
-Nome do conteúdo, dois-pontos, e uma explicação do conceito em 2 a 4 frases.
-[FONTES]
-De 1 a 3 linhas, cada uma "Nome do documento oficial ou obra de referência — o que ele estabelece ou explica". Prefira: Constituição Federal, leis federais, documentos do INEP/MEC, BNCC, IBGE e outros órgãos oficiais, ou livros clássicos da área.`;
+"H00 | como a questão cobra a habilidade, no máximo 12 palavras", usando a Matriz de Referência do ENEM (INEP) de ${AREAS[a].full}.`;
 }
 function dataUriToBlob(d){
   const [h, b] = d.split(','); const mime = (h.match(/data:([^;]+)/)||[])[1]||'image/webp';
@@ -966,25 +967,25 @@ function renderExpBody(q, a, text, done){
   const p = parseExp(text);
   const box = $('#xbody'); if(!box) return;
   let h = '';
-  if(p.RESUMO) h += `<div class="xsec"><h3>A ideia central</h3><p class="resumo">${inl(p.RESUMO)}</p></div>`;
-  if(p.PASSOS){ const ls_ = lines(p.PASSOS).map(l=>l.replace(/^(-|\d+[.)])\s*/,'')); h += `<div class="xsec"><h3>Passo a passo</h3><ol class="passos">${ls_.map(l=>`<li><div>${inl(l)}</div></li>`).join('')}</ol></div>`; }
+  if(p.RESUMO) h += `<div class="xsec"><p class="resumo">${inl(p.RESUMO)}</p></div>`;
+  if(p.PASSOS){ const ls_ = lines(p.PASSOS).map(l=>l.replace(/^(-|•|\d+[.)])\s*/,'')); h += `<div class="xsec"><h3>Por quê</h3><ul class="fatos">${ls_.map(l=>`<li>${inl(l)}</li>`).join('')}</ul></div>`; }
   if(p.ANOTACOES && !/^nenhuma\.?$/i.test(p.ANOTACOES.trim())){
     const ls_ = lines(p.ANOTACOES);
-    h += `<div class="xsec"><h3>Anotações no rascunho</h3><div class="notebook"><span class="clip">rascunho</span>${ls_.map((l,i)=>{
+    h += `<div class="xsec"><h3>Conta</h3><div class="notebook"><span class="clip">rascunho</span>${ls_.map((l,i)=>{
       const res = /^=>/.test(l) || (done && i===ls_.length-1);
       const t = l.replace(/^=>\s*/,'');
       return `<div class="ln${res?' res':''}">${res?'<span>'+esc(t)+'</span>':esc(t)}</div>`; }).join('')}</div></div>`;
   }
   if(p.ALTERNATIVAS){
     const ls_ = lines(p.ALTERNATIVAS).map(l => l.replace(/^[-•*]\s*/,'')).map(l => { const m = l.match(/^\(?([A-E])\)?\s*[:)\-–]\s*(.*)$/); return m ? [m[1], m[2]] : null; }).filter(Boolean).filter(([L])=>L!==q.ok);
-    if(ls_.length) h += `<div class="xsec"><h3>Por que as outras estão erradas</h3><ul class="erradas">${ls_.map(([L,t])=>`<li><span class="bub">${L}</span><div>${inl(t)}</div></li>`).join('')}</ul></div>`;
+    if(ls_.length) h += `<div class="xsec"><h3>As outras</h3><ul class="erradas">${ls_.map(([L,t])=>`<li><span class="bub">${L}</span><div>${inl(t)}</div></li>`).join('')}</ul></div>`;
   }
   if(p.HABILIDADE){
     const m = p.HABILIDADE.match(/H\s?(\d{1,2})/i);
     const code = m ? 'H'+(+m[1]) : null;
     const how = p.HABILIDADE.split('|').slice(1).join('|').trim();
     const htext = code && MATRIZ[a]?.[code];
-    if(code) h += `<div class="xsec"><h3>Habilidade da Matriz de Referência</h3><div class="hab" style="--c:var(--a-${a})"><div class="code">${code}</div><div><div class="htext">${htext?esc(htext):''}</div>${how?`<div class="how">${inl(how)}</div>`:''}<div class="note" style="margin-top:6px"><a href="${LINKS.matriz}" target="_blank" rel="noopener">Matriz de Referência do ENEM — INEP</a></div></div></div></div>`;
+    if(code) h += `<div class="xsec"><h3>Habilidade</h3><div class="hab" style="--c:var(--a-${a})"><div class="code">${code}</div><div><div class="htext">${htext?esc(htext):''}</div>${how?`<div class="how">${inl(how)}</div>`:''}<div class="note" style="margin-top:6px"><a href="${LINKS.matriz}" target="_blank" rel="noopener">Matriz de Referência do ENEM — INEP</a></div></div></div></div>`;
   }
   if(p.CONCEITO) h += `<div class="xsec"><h3>O conteúdo por trás</h3><p>${inl(p.CONCEITO)}</p></div>`;
   if(!done) h += `<div class="wait"><div class="spin"></div>Escrevendo a explicação…</div>`;
@@ -1000,7 +1001,7 @@ async function renderExplain(q, a){
   if(CUR[a]!==q.id) return;
   if(cached?.t){ renderExpBody(q, a, cached.t, true); return; }
   if(!SAMPLE){
-    $('#xbody').innerHTML = `<div class="xsec"><p class="note">A explicação automática aparece quando a página é aberta com login no Claude. As fontes oficiais abaixo continuam valendo para conferir o gabarito.</p></div>`;
+    $('#xbody').innerHTML = `<div class="xsec"><p class="note">A explicação desta questão ainda está sendo preparada. Confira o gabarito oficial abaixo.</p></div>`;
     return;
   }
   if(expCtl) expCtl.abort();
