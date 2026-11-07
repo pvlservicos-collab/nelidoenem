@@ -299,6 +299,34 @@ main > .wrap > .empty{color:var(--on-bg-muted)}
 .twhy{margin:0;font-size:12.5px;color:var(--accent-2);font-weight:400}
 .tquote{margin:4px 0 0;padding:10px 14px;border-left:3px solid var(--accent);background:var(--ice);border-radius:0 12px 12px 0;font-size:14px;font-style:italic;line-height:1.5;color:var(--ink)}
 .tfonte{margin:0;font-size:12.5px;color:var(--muted)}
+.corretor{border-radius:24px;padding:20px}
+.corretor h2{margin:0 0 4px}
+.corRow{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}
+.corField{display:grid;gap:6px}
+.corField label{font-size:12.5px;color:var(--muted)}
+.corField select,.corField input{width:100%;box-sizing:border-box;font:inherit;font-weight:300;font-size:14.5px;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--ice);color:var(--ink)}
+.corFoto{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:14px}
+.corFotoPrev{display:flex;align-items:center;gap:10px}
+.corFotoPrev img{height:64px;width:auto;border-radius:10px;display:block;box-shadow:var(--shadow)}
+.corTexto{width:100%;box-sizing:border-box;font:inherit;font-weight:300;font-size:15px;line-height:1.6;padding:14px 16px;border-radius:16px;border:1px solid var(--line);background:var(--ice);color:var(--ink);margin-top:14px;resize:vertical}
+.corTexto:focus,.corField select:focus,.corField input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.corBar{display:flex;align-items:center;gap:14px;margin-top:14px;flex-wrap:wrap}
+.corResult{margin-top:20px;border-top:1px solid var(--line);padding-top:20px}
+.corNota{display:flex;align-items:baseline;gap:8px;margin-bottom:10px}
+.corNota b{font-size:40px;font-weight:500;color:var(--accent-2)}
+.corNota span{font-size:14px;color:var(--muted)}
+.corGeral{max-width:72ch;margin:0 0 16px}
+.corComps{display:grid;gap:10px;margin-bottom:16px}
+.corComp{background:var(--ice);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.corCompHead{display:flex;justify-content:space-between;font-size:13.5px;font-weight:500;margin-bottom:6px}
+.corBarra{height:6px;border-radius:99px;background:var(--panel-2);overflow:hidden;margin-bottom:8px}
+.corBarraFill{height:100%;background:var(--accent);border-radius:99px}
+.corComp p{margin:0;font-size:13.5px;color:var(--on-bg-muted);line-height:1.5}
+.corListas{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:12px}
+.corListas h3{margin:0 0 6px;font-size:13px;color:var(--muted);font-weight:500}
+.corListas ul{margin:0;padding-left:18px;font-size:13.5px;line-height:1.55}
+.corTranscricao{font-size:13px;color:var(--muted)}
+.corTranscricao p{margin-top:8px;line-height:1.6;color:var(--ink)}
 
 .toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--head);padding:11px 18px;border-radius:999px;font-size:14px;z-index:50;box-shadow:var(--shadow);max-width:calc(100% - 32px)}
 /* Neli: balão no canto inferior direito ao responder */
@@ -1191,9 +1219,35 @@ function renderTemas(main){
   </div>`;
   const destaquesHtml = TEMAS.destaques.itens.map(x => all[x.n] ? tcard(all[x.n], x.porque) : '').join('');
   const catsHtml = TEMAS.categorias.map(c => `<section class="tcat"><h2>${esc(c.titulo)}</h2><p class="note">${esc(c.desc)}</p><div class="tgrid">${c.itens.map(it=>tcard(it)).join('')}</div></section>`).join('');
+  const temaOptions = TEMAS.categorias.map(c => `<optgroup label="${esc(c.titulo)}">${c.itens.map(it=>`<option>${esc(it.tema)}</option>`).join('')}</optgroup>`).join('');
   main.innerHTML = `<div class="wrap wide">
     <div class="lib-head"><div class="eyebrow">Banco de temas</div><h1>Temas de redação</h1>
     <p>${TEMAS.categorias.reduce((n,c)=>n+c.itens.length,0)} possíveis temas de redação, organizados por assunto. Cada um vem com uma citação conhecida que pode servir de repertório sociocultural na redação.</p></div>
+
+    <section class="tcat corretor glass">
+      <h2>Escreva sua redação e a Neli corrige</h2>
+      <p class="note">Escolha um tema (opcional), tire uma foto da redação ou digite o texto, e a Neli corrige nas 5 competências do ENEM.</p>
+      <div class="corRow">
+        <div class="corField"><label for="corTema">Tema (opcional)</label>
+          <select id="corTema"><option value="">Sem tema específico</option>${temaOptions}</select>
+        </div>
+        <div class="corField"><label for="corTemaCustom">Ou digite outro tema</label>
+          <input type="text" id="corTemaCustom" placeholder="Ex.: Os desafios da robótica no Brasil" maxlength="300">
+        </div>
+      </div>
+      <div class="corFoto">
+        <button type="button" class="btn ghost sm" id="corFotoBtn">📷 Tirar foto da redação</button>
+        <input type="file" accept="image/*" capture="environment" id="corFotoInput" hidden>
+        <div class="corFotoPrev" id="corFotoPrev" hidden></div>
+      </div>
+      <textarea id="corTexto" class="corTexto" rows="9" placeholder="Ou digite (ou cole) o texto da redação aqui…"></textarea>
+      <div class="corBar">
+        <button type="button" class="btn" id="corEnviar">Corrigir redação</button>
+        <span class="note" id="corStatus"></span>
+      </div>
+      <div id="corResultado"></div>
+    </section>
+
     <input type="search" id="temaBusca" class="tbusca" placeholder="Buscar um tema…">
     <section class="tcat tdest"><h2>${esc(TEMAS.destaques.titulo)}</h2><p class="note">${esc(TEMAS.destaques.desc)}</p><div class="tgrid">${destaquesHtml}</div></section>
     ${catsHtml}
@@ -1201,7 +1255,80 @@ function renderTemas(main){
   $('#temaBusca').oninput = e => {
     const q = e.target.value.trim().toLowerCase();
     main.querySelectorAll('.titem').forEach(el => { el.hidden = !!q && !(el.dataset.busca||'').includes(q); });
-    main.querySelectorAll('.tcat').forEach(sec => { sec.hidden = ![...sec.querySelectorAll('.titem')].some(el=>!el.hidden); });
+    main.querySelectorAll('.tcat').forEach(sec => { if(!sec.querySelector('.tgrid')) return; sec.hidden = ![...sec.querySelectorAll('.titem')].some(el=>!el.hidden); });
+  };
+  bindCorretor();
+}
+
+function resizeFoto(file, maxDim, quality){
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onerror = () => reject(new Error('leitura'));
+    reader.onload = () => {
+      const img = new Image();
+      img.onerror = () => reject(new Error('imagem'));
+      img.onload = () => {
+        const scale = Math.min(1, maxDim / Math.max(img.width, img.height));
+        const w = Math.round(img.width * scale), h = Math.round(img.height * scale);
+        const cv = document.createElement('canvas'); cv.width = w; cv.height = h;
+        cv.getContext('2d').drawImage(img, 0, 0, w, h);
+        resolve(cv.toDataURL('image/jpeg', quality));
+      };
+      img.src = reader.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function renderCorrecao(r){
+  const comp = (r.competencias||[]).map(c => `<div class="corComp">
+      <div class="corCompHead"><span>C${c.numero} · ${esc(c.nome)}</span><b>${c.nota}/200</b></div>
+      <div class="corBarra"><div class="corBarraFill" style="width:${Math.max(0,Math.min(100,c.nota/2))}%"></div></div>
+      <p>${esc(c.comentario)}</p>
+    </div>`).join('');
+  const lista = (arr) => (arr||[]).map(x=>`<li>${esc(x)}</li>`).join('');
+  return `<div class="corResult">
+    <div class="corNota"><b>${r.nota}</b><span>de 1000</span></div>
+    ${r.comentarioGeral?`<p class="corGeral">${esc(r.comentarioGeral)}</p>`:''}
+    <div class="corComps">${comp}</div>
+    <div class="corListas">
+      ${r.pontosFortes?.length?`<div><h3>Pontos fortes</h3><ul>${lista(r.pontosFortes)}</ul></div>`:''}
+      ${r.pontosAMelhorar?.length?`<div><h3>Pontos a melhorar</h3><ul>${lista(r.pontosAMelhorar)}</ul></div>`:''}
+    </div>
+    ${r.textoTranscrito?`<details class="corTranscricao"><summary>Ver o texto que a Neli leu na foto</summary><p>${esc(r.textoTranscrito).replace(/\n/g,'<br>')}</p></details>`:''}
+  </div>`;
+}
+
+function bindCorretor(){
+  let foto = null;
+  const fotoBtn = $('#corFotoBtn'), fotoInput = $('#corFotoInput'), fotoPrev = $('#corFotoPrev');
+  const texto = $('#corTexto'), temaSel = $('#corTema'), temaCustom = $('#corTemaCustom');
+  const enviar = $('#corEnviar'), status = $('#corStatus'), resultado = $('#corResultado');
+  fotoBtn.onclick = () => fotoInput.click();
+  fotoInput.onchange = async () => {
+    const f = fotoInput.files[0]; if(!f) return;
+    status.textContent = 'Processando foto…';
+    try{
+      foto = await resizeFoto(f, 1600, 0.82);
+      fotoPrev.hidden = false;
+      fotoPrev.innerHTML = `<img src="${foto}" alt="Foto da redação"><button type="button" class="btn ghost sm" id="corFotoRm">Remover foto</button>`;
+      $('#corFotoRm').onclick = () => { foto = null; fotoInput.value=''; fotoPrev.hidden = true; fotoPrev.innerHTML=''; };
+      status.textContent = '';
+    }catch{ status.textContent = 'Não foi possível ler essa foto.'; }
+  };
+  enviar.onclick = async () => {
+    const tv = texto.value.trim();
+    if(!tv && !foto){ status.textContent = 'Escreva o texto ou tire uma foto da redação primeiro.'; return; }
+    const tema = temaCustom.value.trim() || temaSel.value || undefined;
+    enviar.disabled = true; resultado.innerHTML = '';
+    status.innerHTML = `<span class="spin" style="width:14px;height:14px;display:inline-block;vertical-align:-2px;margin-right:6px"></span>A Neli está lendo e corrigindo…`;
+    try{
+      const r = await api('corrigir', { texto: tv || undefined, imagem: foto || undefined, tema });
+      status.textContent = '';
+      resultado.innerHTML = renderCorrecao(r);
+    }catch{
+      status.textContent = 'Não deu para corrigir agora. Tente de novo em alguns segundos.';
+    }finally{ enviar.disabled = false; }
   };
 }
 
