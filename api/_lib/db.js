@@ -30,6 +30,17 @@ export function ensureSchema() {
         v int NOT NULL DEFAULT 1
       )`;
       await sql`CREATE INDEX IF NOT EXISTS users_points_idx ON users (points DESC)`;
+      await sql`CREATE TABLE IF NOT EXISTS redacoes_usuarios (
+        id bigserial PRIMARY KEY,
+        user_key text NOT NULL REFERENCES users(key) ON DELETE CASCADE,
+        tema text NOT NULL DEFAULT '',
+        texto text NOT NULL,
+        origem text NOT NULL DEFAULT 'texto',
+        nota int NOT NULL,
+        correcao jsonb NOT NULL,
+        at bigint NOT NULL
+      )`;
+      await sql`CREATE INDEX IF NOT EXISTS redacoes_usuarios_user_idx ON redacoes_usuarios (user_key, at DESC)`;
     })().catch(e => { ready = null; throw e; });
   }
   return ready;

@@ -299,34 +299,73 @@ main > .wrap > .empty{color:var(--on-bg-muted)}
 .twhy{margin:0;font-size:12.5px;color:var(--accent-2);font-weight:400}
 .tquote{margin:4px 0 0;padding:10px 14px;border-left:3px solid var(--accent);background:var(--ice);border-radius:0 12px 12px 0;font-size:14px;font-style:italic;line-height:1.5;color:var(--ink)}
 .tfonte{margin:0;font-size:12.5px;color:var(--muted)}
-.corretor{border-radius:24px;padding:20px}
-.corretor h2{margin:0 0 4px}
-.corRow{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:14px}
-.corField{display:grid;gap:6px}
-.corField label{font-size:12.5px;color:var(--muted)}
-.corField select,.corField input{width:100%;box-sizing:border-box;font:inherit;font-weight:300;font-size:14.5px;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--ice);color:var(--ink)}
-.corFoto{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:14px}
-.corFotoPrev{display:flex;align-items:center;gap:10px}
-.corFotoPrev img{height:64px;width:auto;border-radius:10px;display:block;box-shadow:var(--shadow)}
-.corTexto{width:100%;box-sizing:border-box;font:inherit;font-weight:300;font-size:15px;line-height:1.6;padding:14px 16px;border-radius:16px;border:1px solid var(--line);background:var(--ice);color:var(--ink);margin-top:14px;resize:vertical}
-.corTexto:focus,.corField select:focus,.corField input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+/* ---------- corretor de redação ---------- */
+.tescrever{font-size:13px;color:var(--accent-2);text-decoration:none;font-weight:400;margin-top:2px}
+.tescrever:hover{text-decoration:underline}
+.tcta{display:grid;gap:2px;text-decoration:none;color:var(--ink);border-radius:18px;padding:14px 18px;margin-bottom:16px}
+.tcta b{font-weight:500;color:var(--accent-2)}
+.tcta span{font-size:14px;color:var(--muted)}
+.corretor{border-radius:24px;padding:22px;margin-bottom:28px}
+.corretor h2{margin:0 0 4px;font-weight:500;font-size:clamp(17px,2.6vw,20px)}
+.corretor > .note{margin:0;max-width:70ch}
+.corField{display:grid;gap:6px;margin-top:16px}
+.corField label{font-size:12.5px;color:var(--muted);font-weight:400}
+.corretor .combo input{font-size:15px;padding:11px 14px}
+.corFoto{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.corFotoPrev{display:flex;align-items:flex-start;gap:12px;margin-top:14px;font-size:13px;color:var(--muted);line-height:1.5;background:var(--accent-soft);border-radius:14px;padding:10px}
+.corFotoPrev b{color:var(--ink);font-weight:500}
+.corFotoPrev img{width:64px;height:84px;object-fit:cover;border-radius:8px;flex:none;background:#fff}
+.linkbtn{border:0;background:none;padding:0;margin-top:4px;color:var(--accent-2);cursor:pointer;font-size:13px;text-decoration:underline}
+.corTexto{width:100%;min-height:240px;box-sizing:border-box;font:inherit;font-weight:300;font-size:15.5px;line-height:1.7;padding:14px 16px;border-radius:16px;border:1px solid var(--line);background:var(--ice);color:var(--ink);margin-top:14px;resize:vertical}
+.corTexto:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 .corBar{display:flex;align-items:center;gap:14px;margin-top:14px;flex-wrap:wrap}
-.corResult{margin-top:20px;border-top:1px solid var(--line);padding-top:20px}
-.corNota{display:flex;align-items:baseline;gap:8px;margin-bottom:10px}
-.corNota b{font-size:40px;font-weight:500;color:var(--accent-2)}
+.corStatus{margin:10px 0 0}
+.corStatus:empty{display:none}
+.sec-h{font-weight:500;font-size:clamp(18px,3vw,22px);margin:0 0 12px;color:var(--on-bg)}
+.lib-head .sec-h{margin:0}
+.lib-sep{margin-top:34px}
+.minhas .note,.minhas .wait{color:var(--on-bg-muted)}
+.ess.mine .nota{background:var(--accent);color:var(--accent-ink)}
+.btn.danger{color:var(--bad)}
+.corAcoes{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.corTexto-env{border-radius:18px;padding:14px 18px;margin-top:16px}
+.corTexto-env summary{cursor:pointer;font-weight:400;color:var(--accent-2)}
+.corEnviado p{margin:10px 0 0;line-height:1.75;text-indent:1.6em;max-width:72ch}
+.corResult{display:grid;gap:14px}
+.corTopo{display:grid;gap:8px}
+.corNota{display:flex;align-items:baseline;gap:8px}
+.corNota b{font-size:44px;font-weight:500;color:var(--accent-2);line-height:1;font-variant-numeric:tabular-nums}
 .corNota span{font-size:14px;color:var(--muted)}
-.corGeral{max-width:72ch;margin:0 0 16px}
-.corComps{display:grid;gap:10px;margin-bottom:16px}
-.corComp{background:var(--ice);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
-.corCompHead{display:flex;justify-content:space-between;font-size:13.5px;font-weight:500;margin-bottom:6px}
-.corBarra{height:6px;border-radius:99px;background:var(--panel-2);overflow:hidden;margin-bottom:8px}
+.corZero{margin:0;padding:10px 14px;border-radius:12px;background:var(--bad-soft);color:var(--bad)}
+.corGeral{max-width:72ch;margin:0;font-size:15.5px}
+.corComps{display:grid;gap:10px}
+.corComp,.corBox{background:var(--ice);border:1px solid var(--line);border-radius:16px;padding:14px 16px}
+.corCompHead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:14px;font-weight:500;margin-bottom:8px}
+.corCompHead b{font-size:18px;color:var(--accent-2);white-space:nowrap;font-variant-numeric:tabular-nums}
+.corCompHead small{font-size:12px;color:var(--muted);font-weight:300}
+.corBarra{height:6px;border-radius:99px;background:var(--panel-2);overflow:hidden;margin-bottom:10px}
+.corBarra.big{height:10px;margin:0}
 .corBarraFill{height:100%;background:var(--accent);border-radius:99px}
-.corComp p{margin:0;font-size:13.5px;color:var(--on-bg-muted);line-height:1.5}
-.corListas{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:12px}
-.corListas h3{margin:0 0 6px;font-size:13px;color:var(--muted);font-weight:500}
-.corListas ul{margin:0;padding-left:18px;font-size:13.5px;line-height:1.55}
-.corTranscricao{font-size:13px;color:var(--muted)}
-.corTranscricao p{margin-top:8px;line-height:1.6;color:var(--ink)}
+.corComp p{margin:0 0 6px;font-size:14px;line-height:1.55}
+.corComp p:last-child{margin-bottom:0}
+.corComp p.corNivel{color:var(--muted);font-style:italic;font-size:13px}
+.corMelhorar{background:var(--accent-soft);border-radius:10px;padding:8px 10px}
+.corMelhorar b{font-weight:500}
+.corBox h3{margin:0 0 10px;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:400}
+.corBox ul{margin:0;padding-left:18px;font-size:14px;line-height:1.55}
+.corBox li+li{margin-top:4px}
+.corProp > div{align-items:flex-start}
+.corProp small{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+.corProp b{font-weight:500}
+.c5 .ck.no{background:var(--panel-2);color:var(--muted)}
+.corBox ul.corDesvios{list-style:none;padding:0}
+.corDesvios li{padding:8px 0;border-top:1px solid var(--line)}
+.corDesvios li:first-child{border-top:0;padding-top:0}
+.corDesvios s{color:var(--bad);text-decoration-thickness:1px}
+.corDesvios .seta{color:var(--muted)}
+.corDesvios b{color:var(--ok);font-weight:500}
+.corDesvios small{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+.corListas{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
 
 .toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:var(--head);padding:11px 18px;border-radius:999px;font-size:14px;z-index:50;box-shadow:var(--shadow);max-width:calc(100% - 32px)}
 /* Neli: balão no canto inferior direito ao responder */
@@ -1157,14 +1196,20 @@ function renderRanking(main){
 // ---------- redação ----------
 function renderRedacao(main){
   if(!REDACOES.length){ main.innerHTML = `<div class="wrap"><div class="empty"><div class="spin" style="margin:0 auto 12px"></div>Carregando redações…</div></div>`; dataReady.then(()=>view==='R'&&renderView()); return; }
+  if(mineOpen!=null){ renderMinha(main); return; }
   if(essayOpen==null){
     main.innerHTML = `<div class="wrap wide">
-      <div class="lib-head"><div class="eyebrow">Biblioteca</div><h1>Redações nota 1000</h1>
+      <div class="lib-head"><div class="eyebrow">Redação</div><h1>Corretor de redação</h1></div>
+      ${corretorHtml()}
+      ${S.mode==='api'?`<section class="minhas"><h2 class="sec-h">Minhas redações</h2><div id="minhasBox">${minhasHtml()}</div></section>`:''}
+      <div class="lib-head lib-sep"><div class="eyebrow">Biblioteca</div><h2 class="sec-h">Redações nota 1000</h2>
       <p>Redações reais que tiraram nota 1000 no ENEM, com o nome de quem escreveu, e redações-modelo sobre temas de outros anos. Cada parte vem marcada por cor: introdução, tese, repertório, argumentos, conectivos e os cinco elementos da proposta de intervenção.</p></div>
       <div class="lib">${REDACOES.map((r,i)=>`<button type="button" class="ess${r.real?' real':''}" data-i="${i}"><span class="yr">ENEM ${esc(r.ano)}${r.real?`<span class="nota">Nota ${r.nota}</span>`:'<span class="mod">Modelo</span>'}</span><span class="tm">${esc(r.tema)}</span><span class="tt">${r.real?'Redação de <b>'+esc(r.autor)+'</b>':esc(r.titulo)}</span></button>`).join('')}</div>
       <p class="disclaim">As redações com nome e <b>Nota 1000</b> são de candidatos reais e foram divulgadas pela imprensa; o link da fonte está em cada texto. As marcadas como <b>Modelo</b> foram escritas pelo nelidoenem para estudo, seguindo as cinco competências da <a href="${LINKS.cartilha}" target="_blank" rel="noopener">Cartilha do Participante (INEP)</a>, e não são de candidatos reais.</p>
     </div>`;
-    main.querySelectorAll('.ess').forEach(b => b.onclick = () => { essayOpen = +b.dataset.i; essayFocus=null; renderView(); window.scrollTo(0,0); });
+    main.querySelectorAll('.ess[data-i]').forEach(b => b.onclick = () => { essayOpen = +b.dataset.i; essayFocus=null; renderView(); window.scrollTo(0,0); });
+    bindCorretor(); bindMinhas();
+    if(S.mode==='api' && !minhasList()) loadMinhas().then(() => { const box = $('#minhasBox'); if(box && view==='R'){ box.innerHTML = minhasHtml(); bindMinhas(); } });
     return;
   }
   const r = REDACOES[essayOpen];
@@ -1216,38 +1261,14 @@ function renderTemas(main){
     ${porque?`<p class="twhy">${esc(porque)}</p>`:''}
     <blockquote class="tquote">“${esc(it.citacao)}”</blockquote>
     <p class="tfonte">— ${esc(it.fonte)}</p>
+    <a class="tescrever" href="#redacao" data-tema="${esc(it.tema)}">Escrever sobre este tema →</a>
   </div>`;
   const destaquesHtml = TEMAS.destaques.itens.map(x => all[x.n] ? tcard(all[x.n], x.porque) : '').join('');
   const catsHtml = TEMAS.categorias.map(c => `<section class="tcat"><h2>${esc(c.titulo)}</h2><p class="note">${esc(c.desc)}</p><div class="tgrid">${c.itens.map(it=>tcard(it)).join('')}</div></section>`).join('');
-  const temaOptions = TEMAS.categorias.map(c => `<optgroup label="${esc(c.titulo)}">${c.itens.map(it=>`<option>${esc(it.tema)}</option>`).join('')}</optgroup>`).join('');
   main.innerHTML = `<div class="wrap wide">
     <div class="lib-head"><div class="eyebrow">Banco de temas</div><h1>Temas de redação</h1>
     <p>${TEMAS.categorias.reduce((n,c)=>n+c.itens.length,0)} possíveis temas de redação, organizados por assunto. Cada um vem com uma citação conhecida que pode servir de repertório sociocultural na redação.</p></div>
-
-    <section class="tcat corretor glass">
-      <h2>Escreva sua redação e a Neli corrige</h2>
-      <p class="note">Escolha um tema (opcional), tire uma foto da redação ou digite o texto, e a Neli corrige nas 5 competências do ENEM.</p>
-      <div class="corRow">
-        <div class="corField"><label for="corTema">Tema (opcional)</label>
-          <select id="corTema"><option value="">Sem tema específico</option>${temaOptions}</select>
-        </div>
-        <div class="corField"><label for="corTemaCustom">Ou digite outro tema</label>
-          <input type="text" id="corTemaCustom" placeholder="Ex.: Os desafios da robótica no Brasil" maxlength="300">
-        </div>
-      </div>
-      <div class="corFoto">
-        <button type="button" class="btn ghost sm" id="corFotoBtn">📷 Tirar foto da redação</button>
-        <input type="file" accept="image/*" capture="environment" id="corFotoInput" hidden>
-        <div class="corFotoPrev" id="corFotoPrev" hidden></div>
-      </div>
-      <textarea id="corTexto" class="corTexto" rows="9" placeholder="Ou digite (ou cole) o texto da redação aqui…"></textarea>
-      <div class="corBar">
-        <button type="button" class="btn" id="corEnviar">Corrigir redação</button>
-        <span class="note" id="corStatus"></span>
-      </div>
-      <div id="corResultado"></div>
-    </section>
-
+    <a class="tcta glass" href="#redacao"><b>Treine com a Neli</b><span>Escreva ou fotografe sua redação e receba a correção nas 5 competências do ENEM →</span></a>
     <input type="search" id="temaBusca" class="tbusca" placeholder="Buscar um tema…">
     <section class="tcat tdest"><h2>${esc(TEMAS.destaques.titulo)}</h2><p class="note">${esc(TEMAS.destaques.desc)}</p><div class="tgrid">${destaquesHtml}</div></section>
     ${catsHtml}
@@ -1255,9 +1276,9 @@ function renderTemas(main){
   $('#temaBusca').oninput = e => {
     const q = e.target.value.trim().toLowerCase();
     main.querySelectorAll('.titem').forEach(el => { el.hidden = !!q && !(el.dataset.busca||'').includes(q); });
-    main.querySelectorAll('.tcat').forEach(sec => { if(!sec.querySelector('.tgrid')) return; sec.hidden = ![...sec.querySelectorAll('.titem')].some(el=>!el.hidden); });
+    main.querySelectorAll('.tcat').forEach(sec => { sec.hidden = ![...sec.querySelectorAll('.titem')].some(el=>!el.hidden); });
   };
-  bindCorretor();
+  main.querySelectorAll('.tescrever').forEach(a => a.onclick = () => { COR.tema = a.dataset.tema; mineOpen = null; essayOpen = null; });
 }
 
 function resizeFoto(file, maxDim, quality){
@@ -1280,55 +1301,200 @@ function resizeFoto(file, maxDim, quality){
   });
 }
 
-function renderCorrecao(r){
-  const comp = (r.competencias||[]).map(c => `<div class="corComp">
-      <div class="corCompHead"><span>C${c.numero} · ${esc(c.nome)}</span><b>${c.nota}/200</b></div>
-      <div class="corBarra"><div class="corBarraFill" style="width:${Math.max(0,Math.min(100,c.nota/2))}%"></div></div>
-      <p>${esc(c.comentario)}</p>
-    </div>`).join('');
-  const lista = (arr) => (arr||[]).map(x=>`<li>${esc(x)}</li>`).join('');
-  return `<div class="corResult">
-    <div class="corNota"><b>${r.nota}</b><span>de 1000</span></div>
-    ${r.comentarioGeral?`<p class="corGeral">${esc(r.comentarioGeral)}</p>`:''}
-    <div class="corComps">${comp}</div>
-    <div class="corListas">
-      ${r.pontosFortes?.length?`<div><h3>Pontos fortes</h3><ul>${lista(r.pontosFortes)}</ul></div>`:''}
-      ${r.pontosAMelhorar?.length?`<div><h3>Pontos a melhorar</h3><ul>${lista(r.pontosAMelhorar)}</ul></div>`:''}
+// ---------- corretor de redação ----------
+const COR = { tema:'', texto:'', origem:'texto', foto:null, busy:false, lendo:false };
+let MINHAS = null, mineOpen = null;
+const COMP_NOMES = ['Domínio da escrita formal','Compreensão do tema e estrutura','Seleção e organização dos argumentos','Coesão e mecanismos linguísticos','Proposta de intervenção'];
+const PROP_NOMES = [['agente','Agente'],['acao','Ação'],['meio','Meio / modo'],['finalidade','Finalidade'],['detalhamento','Detalhamento']];
+const ICON_CAM = '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg>';
+const ICON_IMG = '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="M21 16l-5-5-9 9"/></svg>';
+const palavras = s => (String(s).trim().match(/\S+/g) || []).length;
+const fmtData = t => new Date(t).toLocaleDateString('pt-BR', {day:'2-digit', month:'short', year:'numeric'});
+const spinTxt = t => `<span class="spin" style="width:14px;height:14px;display:inline-block;vertical-align:-2px;margin-right:6px"></span>${t}`;
+
+async function loadMinhas(){
+  const key = S.me?.key;
+  if(!key || S.mode!=='api'){ MINHAS = {key, list:[]}; return; }
+  try{ MINHAS = {key, list:(await api('redacoes?key='+encodeURIComponent(key))).redacoes}; }
+  catch{ MINHAS = {key, list:[], erro:true}; }
+}
+const minhasList = () => MINHAS && MINHAS.key===S.me?.key ? MINHAS.list : null;
+
+function corretorHtml(){
+  if(S.mode!=='api') return `<section class="corretor glass"><h2>Corrigir minha redação</h2><p class="note">O corretor funciona no site <a href="https://nelidoenem.vercel.app/redacao">nelidoenem.vercel.app</a>.</p></section>`;
+  return `<section class="corretor glass">
+    <h2>Corrigir minha redação</h2>
+    <p class="note">Escolha ou digite o tema, depois tire uma foto da folha ou digite o texto. A Neli corrige como a banca do ENEM, nas 5 competências, e guarda a correção em Minhas redações.</p>
+    <div class="corField combo">
+      <label for="corTema">Tema da redação</label>
+      <input id="corTema" type="text" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="corTemaList" aria-autocomplete="list" maxlength="300" placeholder="Escolha da lista ou digite o seu tema" value="${esc(COR.tema)}">
+      <ul id="corTemaList" role="listbox" hidden></ul>
     </div>
-    ${r.textoTranscrito?`<details class="corTranscricao"><summary>Ver o texto que a Neli leu na foto</summary><p>${esc(r.textoTranscrito).replace(/\n/g,'<br>')}</p></details>`:''}
-  </div>`;
+    <div class="corFoto">
+      <button type="button" class="btn ghost sm" id="corCam">${ICON_CAM}Tirar foto da redação</button>
+      <button type="button" class="btn ghost sm" id="corGal">${ICON_IMG}Escolher da galeria</button>
+      <input type="file" accept="image/*" capture="environment" id="corCamIn" hidden>
+      <input type="file" accept="image/*" id="corGalIn" hidden>
+    </div>
+    <div class="corFotoPrev" id="corFotoPrev"${COR.foto?'':' hidden'}>${COR.foto?fotoPrevHtml():''}</div>
+    <textarea id="corTexto" class="corTexto" rows="12" placeholder="Digite ou cole aqui o texto da redação. Se tirar uma foto, o texto lido aparece aqui para você conferir.">${esc(COR.texto)}</textarea>
+    <div class="corBar">
+      <button type="button" class="btn" id="corEnviar"${COR.busy?' disabled':''}>Corrigir redação</button>
+      <span class="note" id="corConta"></span>
+    </div>
+    <p class="note corStatus" id="corStatus">${COR.busy?spinTxt('A Neli está corrigindo. Leva cerca de 30 segundos…'):''}</p>
+  </section>`;
+}
+const fotoPrevHtml = () => `<img src="${COR.foto}" alt="Foto enviada da redação"><div><b>Confira o texto abaixo.</b> Corrija só o que a Neli leu diferente da sua folha. Os seus erros de escrita devem ficar, para a correção ser justa.<br><button type="button" class="linkbtn" id="corFotoRm">Remover foto</button></div>`;
+
+function minhasHtml(){
+  const list = minhasList();
+  if(!list) return `<div class="wait"><div class="spin"></div>Carregando suas redações…</div>`;
+  if(MINHAS.erro) return `<p class="note">Não consegui carregar suas redações agora.</p>`;
+  if(!list.length) return `<p class="note">Suas redações corrigidas vão aparecer aqui.</p>`;
+  return `<div class="lib">${list.map(r=>`<button type="button" class="ess mine" data-id="${r.id}"><span class="yr">${fmtData(r.at)}<span class="nota">${r.nota} pts</span></span><span class="tm">${esc(r.tema || 'Tema livre')}</span><span class="tt">${r.origem==='foto'?'Enviada por foto':'Digitada'} · ${palavras(r.texto)} palavras</span></button>`).join('')}</div>`;
+}
+function bindMinhas(){
+  document.querySelectorAll('.ess.mine').forEach(b => b.onclick = () => { mineOpen = +b.dataset.id; renderView(); window.scrollTo(0,0); });
+}
+
+function bindTemaCombo(){
+  const inp = $('#corTema'), ul = $('#corTemaList');
+  const todos = TEMAS ? TEMAS.categorias.flatMap(c => c.itens.map(i => i.tema)) : [];
+  let idx = -1, items = [];
+  const hl = (t, v) => { const at = norm(t).indexOf(v); return v && at>=0 ? esc(t.slice(0,at))+'<mark>'+esc(t.slice(at,at+v.length))+'</mark>'+esc(t.slice(at+v.length)) : esc(t); };
+  const draw = () => {
+    const raw = inp.value.trim(), v = norm(raw);
+    const found = (v ? todos.filter(t => norm(t).includes(v)) : todos).slice(0, v ? 8 : 80);
+    items = found.map(t => ({t}));
+    if(raw && !todos.some(t => norm(t)===v)) items.unshift({t:raw, custom:true});
+    if(!items.length){ ul.hidden = true; inp.setAttribute('aria-expanded','false'); return; }
+    idx = Math.min(idx, items.length-1);
+    ul.innerHTML = items.map((x,i) => `<li role="option" data-i="${i}" aria-selected="${i===idx}"><span>${x.custom?`Usar meu tema: “${esc(x.t)}”`:hl(x.t, v)}</span>${x.custom?'<small>personalizado</small>':''}</li>`).join('');
+    ul.hidden = false; inp.setAttribute('aria-expanded','true');
+    ul.querySelector('[aria-selected="true"]')?.scrollIntoView({block:'nearest'});
+  };
+  const pick = i => { const x = items[i]; if(!x) return; inp.value = x.t; COR.tema = x.t; ul.hidden = true; inp.setAttribute('aria-expanded','false'); };
+  inp.addEventListener('input', () => { COR.tema = inp.value; idx = -1; draw(); });
+  inp.addEventListener('focus', draw);
+  inp.addEventListener('blur', () => setTimeout(() => { ul.hidden = true; inp.setAttribute('aria-expanded','false'); }, 150));
+  inp.addEventListener('keydown', e => {
+    const n = items.length;
+    if(e.key==='ArrowDown' && n){ e.preventDefault(); if(ul.hidden) draw(); idx = (idx+1)%n; draw(); }
+    else if(e.key==='ArrowUp' && n){ e.preventDefault(); idx = (idx-1+n)%n; draw(); }
+    else if(e.key==='Enter'){ e.preventDefault(); if(idx>=0 && !ul.hidden) pick(idx); else { ul.hidden = true; $('#corTexto').focus(); } }
+    else if(e.key==='Escape'){ ul.hidden = true; }
+  });
+  ul.addEventListener('mousedown', e => { const li = e.target.closest('li'); if(li){ e.preventDefault(); pick(+li.dataset.i); } });
 }
 
 function bindCorretor(){
-  let foto = null;
-  const fotoBtn = $('#corFotoBtn'), fotoInput = $('#corFotoInput'), fotoPrev = $('#corFotoPrev');
-  const texto = $('#corTexto'), temaSel = $('#corTema'), temaCustom = $('#corTemaCustom');
-  const enviar = $('#corEnviar'), status = $('#corStatus'), resultado = $('#corResultado');
-  fotoBtn.onclick = () => fotoInput.click();
-  fotoInput.onchange = async () => {
-    const f = fotoInput.files[0]; if(!f) return;
-    status.textContent = 'Processando foto…';
+  if(S.mode!=='api') return;
+  bindTemaCombo();
+  const ta = $('#corTexto'), conta = $('#corConta'), status = $('#corStatus');
+  const contar = () => { const n = palavras(ta.value); conta.textContent = n ? `${n} palavras` : ''; };
+  contar();
+  ta.oninput = () => { COR.texto = ta.value; contar(); };
+  const bindRm = () => { const b = $('#corFotoRm'); if(b) b.onclick = () => { COR.foto = null; COR.origem = 'texto'; $('#corFotoPrev').hidden = true; $('#corFotoPrev').innerHTML = ''; }; };
+  bindRm();
+  const lerFoto = async input => {
+    const f = input.files[0]; input.value = ''; if(!f || COR.lendo) return;
+    if(ta.value.trim() && !confirm('Trocar o texto que já está na caixa pelo texto da foto?')) return;
+    COR.lendo = true; status.innerHTML = spinTxt('A Neli está lendo a foto…');
     try{
-      foto = await resizeFoto(f, 1600, 0.82);
-      fotoPrev.hidden = false;
-      fotoPrev.innerHTML = `<img src="${foto}" alt="Foto da redação"><button type="button" class="btn ghost sm" id="corFotoRm">Remover foto</button>`;
-      $('#corFotoRm').onclick = () => { foto = null; fotoInput.value=''; fotoPrev.hidden = true; fotoPrev.innerHTML=''; };
-      status.textContent = '';
-    }catch{ status.textContent = 'Não foi possível ler essa foto.'; }
+      const img = await resizeFoto(f, 2000, 0.85);
+      const r = await api('redacoes', {acao:'ler', imagem:img});
+      if(!r.legivel && !r.texto){ status.textContent = r.observacao || 'Não consegui ler essa foto. Tente com mais luz, sem sombra e com a folha inteira aparecendo.'; return; }
+      COR.foto = img; COR.origem = 'foto'; COR.texto = r.texto;
+      if(view==='R' && $('#corTexto')){
+        $('#corTexto').value = r.texto; contar();
+        const pv = $('#corFotoPrev'); pv.innerHTML = fotoPrevHtml(); pv.hidden = false; bindRm();
+        status.textContent = r.legivel ? '' : (r.observacao || 'Parte da foto ficou difícil de ler. Confira o texto com atenção.');
+      }
+    }catch{ status.textContent = 'Não consegui ler a foto agora. Tente de novo em alguns segundos.'; }
+    finally{ COR.lendo = false; }
   };
-  enviar.onclick = async () => {
-    const tv = texto.value.trim();
-    if(!tv && !foto){ status.textContent = 'Escreva o texto ou tire uma foto da redação primeiro.'; return; }
-    const tema = temaCustom.value.trim() || temaSel.value || undefined;
-    enviar.disabled = true; resultado.innerHTML = '';
-    status.innerHTML = `<span class="spin" style="width:14px;height:14px;display:inline-block;vertical-align:-2px;margin-right:6px"></span>A Neli está lendo e corrigindo…`;
+  $('#corCam').onclick = () => $('#corCamIn').click();
+  $('#corGal').onclick = () => $('#corGalIn').click();
+  $('#corCamIn').onchange = e => lerFoto(e.target);
+  $('#corGalIn').onchange = e => lerFoto(e.target);
+  $('#corEnviar').onclick = async () => {
+    const texto = ta.value.trim();
+    if(!texto){ status.textContent = 'Digite o texto ou tire uma foto da redação primeiro.'; ta.focus(); return; }
+    const n = palavras(texto);
+    if(n < 70 && !confirm(`Seu texto tem ${n} palavras. No ENEM, redação com até 7 linhas recebe nota zero. Corrigir mesmo assim?`)) return;
+    if(!COR.tema.trim() && !confirm('Você não escolheu um tema. A Neli vai corrigir sem checar fuga ou tangenciamento do tema. Continuar?')) return;
+    COR.busy = true; $('#corEnviar').disabled = true;
+    status.innerHTML = spinTxt('A Neli está corrigindo. Leva cerca de 30 segundos…');
     try{
-      const r = await api('corrigir', { texto: tv || undefined, imagem: foto || undefined, tema });
-      status.textContent = '';
-      resultado.innerHTML = renderCorrecao(r);
-    }catch{
-      status.textContent = 'Não deu para corrigir agora. Tente de novo em alguns segundos.';
-    }finally{ enviar.disabled = false; }
+      const r = await api('redacoes', {acao:'corrigir', key:S.me.key, tema:COR.tema.trim(), texto, origem:COR.origem});
+      if(minhasList()) MINHAS.list.unshift(r); else MINHAS = {key:S.me.key, list:[r]};
+      Object.assign(COR, {texto:'', foto:null, origem:'texto'});
+      if(view==='R'){ mineOpen = r.id; essayOpen = null; renderView(); window.scrollTo(0,0); }
+      else toast(`Sua redação foi corrigida: ${r.nota} pontos. Veja na aba Redação.`);
+    }catch(e){
+      const s = $('#corStatus');
+      if(s) s.textContent = e.message==='limite_gemini' ? 'Muita gente corrigindo agora. Tente de novo em um minuto.' : 'Não deu para corrigir agora. Seu texto continua aqui; tente de novo em alguns segundos.';
+    }finally{
+      COR.busy = false; const b = $('#corEnviar'); if(b) b.disabled = false;
+    }
+  };
+}
+
+function renderCorrecao(c){
+  const pct = Math.round(c.nota/10);
+  const comps = c.competencias.map((k,i) => `<div class="corComp">
+      <div class="corCompHead"><span>Competência ${k.numero} · ${COMP_NOMES[i]}</span><b>${k.nota}<small>/200</small></b></div>
+      <div class="corBarra"><div class="corBarraFill" style="width:${k.nota/2}%"></div></div>
+      ${k.nivel?`<p class="corNivel">${esc(k.nivel)}</p>`:''}
+      <p>${esc(k.comentario)}</p>
+      ${k.comoMelhorar?`<p class="corMelhorar"><b>Como subir de nível:</b> ${esc(k.comoMelhorar)}</p>`:''}
+    </div>`).join('');
+  const prop = PROP_NOMES.map(([k,n]) => `<div><span class="ck${c.proposta[k]?'':' no'}">${c.proposta[k]?'✓':'–'}</span><span><b>${n}</b>${c.proposta[k]?`<small>“${esc(c.proposta[k])}”</small>`:'<small>não encontrado</small>'}</span></div>`).join('');
+  const lista = arr => arr.map(x => `<li>${esc(x)}</li>`).join('');
+  return `<div class="corResult">
+    <div class="corTopo">
+      <div class="corNota"><b>${c.nota}</b><span>de 1000</span></div>
+      <div class="corBarra big"><div class="corBarraFill" style="width:${pct}%"></div></div>
+    </div>
+    ${c.notaZero?`<p class="corZero"><b>Nota zero.</b> ${esc(c.motivoZero)}</p>`:''}
+    ${c.comentarioGeral?`<p class="corGeral">${esc(c.comentarioGeral)}</p>`:''}
+    <div class="corComps">${comps}</div>
+    <div class="corBox"><h3>Proposta de intervenção</h3><div class="c5 corProp">${prop}</div></div>
+    ${c.desvios.length?`<div class="corBox"><h3>Desvios de escrita (Competência 1)</h3><ul class="corDesvios">${c.desvios.map(d=>`<li><s>${esc(d.trecho)}</s> <span class="seta">→</span> <b>${esc(d.correcao)}</b><small>${esc(d.explicacao)}</small></li>`).join('')}</ul></div>`:''}
+    ${c.repertorios.length?`<div class="corBox"><h3>Repertório sociocultural</h3><ul>${lista(c.repertorios)}</ul></div>`:''}
+    <div class="corListas">
+      ${c.pontosFortes.length?`<div class="corBox"><h3>Pontos fortes</h3><ul>${lista(c.pontosFortes)}</ul></div>`:''}
+      ${c.pontosAMelhorar.length?`<div class="corBox"><h3>Pontos a melhorar</h3><ul>${lista(c.pontosAMelhorar)}</ul></div>`:''}
+    </div>
+  </div>`;
+}
+
+function renderMinha(main){
+  const r = (minhasList() || []).find(x => x.id===mineOpen);
+  if(!r){ mineOpen = null; renderView(); return; }
+  const paras = r.texto.split(/\n\s*\n/).map(p => `<p>${esc(p.trim()).replace(/\n/g,' ')}</p>`).join('');
+  main.innerHTML = `<div class="wrap">
+    <button class="back" type="button" id="backMine">← Voltar ao corretor</button>
+    <div class="rd-text">
+      <div class="eyebrow">Minha redação · ${fmtData(r.at)} · ${r.origem==='foto'?'enviada por foto':'digitada'}</div>
+      <h1>${esc(r.tema || 'Tema livre')}</h1>
+      <div class="corretor glass">${renderCorrecao(r.correcao)}</div>
+      <details class="corTexto-env glass"><summary>Ver o texto que você enviou</summary><div class="corEnviado">${paras}</div></details>
+      <div class="corAcoes">
+        <button type="button" class="btn ghost sm" id="mineReescrever">Reescrever esta redação</button>
+        <button type="button" class="btn ghost sm danger" id="mineApagar">Apagar</button>
+      </div>
+    </div>
+  </div>`;
+  $('#backMine').onclick = () => { mineOpen = null; renderView(); window.scrollTo(0,0); };
+  $('#mineReescrever').onclick = () => { Object.assign(COR, {tema:r.tema, texto:r.texto, origem:'texto', foto:null}); mineOpen = null; renderView(); window.scrollTo(0,0); };
+  $('#mineApagar').onclick = async () => {
+    if(!confirm('Apagar esta redação e a correção? Não dá para desfazer.')) return;
+    try{
+      await api('redacoes', {acao:'apagar', key:S.me.key, id:r.id});
+      MINHAS.list = MINHAS.list.filter(x => x.id!==r.id); mineOpen = null; renderView(); window.scrollTo(0,0);
+    }catch{ toast('Não consegui apagar agora. Tente de novo.'); }
   };
 }
 
@@ -1346,8 +1512,8 @@ S.listeners.add(() => {
     }
   }
 });
-$('#logoutBtn').onclick = () => { S.me=null; ss.set('nelido:me', null); if(ansUnsub){ansUnsub();ansUnsub=null;} S.answers={}; Object.keys(ANS).forEach(k=>delete ANS[k]); $('#nameInput').value=''; showLogin(); };
-window.addEventListener('hashchange', () => { if(view==='R' && location.hash!=='#redacao'){ essayOpen=null; } route(); });
+$('#logoutBtn').onclick = () => { S.me=null; ss.set('nelido:me', null); MINHAS=null; mineOpen=null; Object.assign(COR, {tema:'', texto:'', origem:'texto', foto:null}); if(ansUnsub){ansUnsub();ansUnsub=null;} S.answers={}; Object.keys(ANS).forEach(k=>delete ANS[k]); $('#nameInput').value=''; showLogin(); };
+window.addEventListener('hashchange', () => { if(view==='R' && location.hash!=='#redacao'){ essayOpen=null; mineOpen=null; } route(); });
 bindLogin();
 (async () => {
   const saved = ss.get('nelido:me');
