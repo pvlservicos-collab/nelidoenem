@@ -808,8 +808,8 @@ function showLogin(){
 }
 function route(){
   if(!S.me){ showLogin(); return; }
-  const h = (location.hash||'').slice(1);
   const map = {linguagens:'L', humanas:'H', natureza:'N', matematica:'M', redacao:'R', temas:'T', ranking:'K'};
+  const h = (location.hash||'').slice(1) || (location.pathname||'').replace(/^\/+/,'').replace(/\/+$/,'');
   const v = map[h] || 'L';
   if(v !== view){ view = v; window.scrollTo(0,0); }
   document.querySelectorAll('nav a[data-v]').forEach(a => a.setAttribute('aria-current', a.dataset.v===v ? 'page' : 'false'));
