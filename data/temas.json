@@ -1,0 +1,125 @@
+{
+  "categorias": [
+    {
+      "titulo": "Temas relacionados aos direitos das pessoas",
+      "desc": "Estes são temas que envolvem direitos fundamentais, dignidade humana, proteção e igualdade.",
+      "itens": [
+        {"n":1,"tema":"A garantia dos direitos das crianças e adolescentes no Brasil","citacao":"Não há revelação mais clara da alma de uma sociedade do que a forma como ela trata as suas crianças.","fonte":"Nelson Mandela"},
+        {"n":2,"tema":"Os desafios para combater a exploração do trabalho infantil","citacao":"Nenhuma criança ou adolescente será objeto de qualquer forma de negligência, discriminação, exploração, violência, crueldade e opressão.","fonte":"Art. 5º do Estatuto da Criança e do Adolescente"},
+        {"n":3,"tema":"A garantia dos direitos dos consumidores brasileiros","citacao":"O fornecedor (...) responde, independentemente da existência de culpa, pela reparação dos danos causados aos consumidores.","fonte":"Art. 12 do Código de Defesa do Consumidor"},
+        {"n":4,"tema":"Os desafios para garantir moradia digna à população brasileira","citacao":"São direitos sociais a educação, a saúde, a alimentação, o trabalho, a moradia, o transporte, o lazer, a segurança (...).","fonte":"Art. 6º da Constituição Federal"},
+        {"n":5,"tema":"O direito à alimentação e o combate à fome no Brasil","citacao":"Toda pessoa tem direito a um padrão de vida capaz de assegurar-lhe (...) saúde e bem-estar, inclusive alimentação (...).","fonte":"Art. 25 da Declaração Universal dos Direitos Humanos"},
+        {"n":6,"tema":"A garantia de acesso à água potável no Brasil","citacao":"A água é um bem de domínio público, dotado de valor econômico e essencial à vida.","fonte":"princípio da Lei 9.433/1997 (Política Nacional de Recursos Hídricos)"},
+        {"n":7,"tema":"Os desafios para garantir o direito ao lazer entre os brasileiros","citacao":"Toda pessoa tem direito a repouso e lazer (...).","fonte":"Art. 24 da Declaração Universal dos Direitos Humanos"},
+        {"n":8,"tema":"A importância da liberdade de expressão na sociedade brasileira","citacao":"É livre a manifestação do pensamento, sendo vedado o anonimato.","fonte":"Art. 5º, inciso IV, da Constituição Federal"},
+        {"n":9,"tema":"Os desafios para garantir a segurança dos cidadãos brasileiros","citacao":"A segurança pública (...) é dever do Estado, direito e responsabilidade de todos (...).","fonte":"Art. 144 da Constituição Federal"},
+        {"n":10,"tema":"A proteção dos direitos dos trabalhadores informais","citacao":"São direitos dos trabalhadores urbanos e rurais, além de outros que visem à melhoria de sua condição social (...).","fonte":"Art. 7º da Constituição Federal"},
+        {"n":11,"tema":"Os desafios para garantir o acesso à justiça no Brasil","citacao":"A lei não excluirá da apreciação do Poder Judiciário lesão ou ameaça a direito.","fonte":"Art. 5º, inciso XXXV, da Constituição Federal"},
+        {"n":12,"tema":"A garantia de direitos das pessoas em situação de rua","citacao":"Ninguém será submetido a tortura, nem a tratamento cruel, desumano ou degradante.","fonte":"Art. 5º da Declaração Universal dos Direitos Humanos"},
+        {"n":13,"tema":"Os desafios para combater a exploração sexual de crianças e adolescentes","citacao":"É dever da família, da sociedade e do Estado assegurar à criança e ao adolescente, com absoluta prioridade, (...) colocando-os a salvo de toda forma de negligência, discriminação, exploração, violência, crueldade e opressão.","fonte":"Art. 227 da Constituição Federal"},
+        {"n":14,"tema":"A importância da proteção dos direitos dos animais no Brasil","citacao":"É vedada (...) qualquer prática que submeta os animais a crueldade.","fonte":"Art. 225, §1º, inciso VII, da Constituição Federal"},
+        {"n":15,"tema":"Os desafios para garantir o direito à mobilidade urbana","citacao":"O direito a cidades sustentáveis [entende-se como] o direito à terra urbana, à moradia, (...) ao transporte e aos serviços públicos (...).","fonte":"Art. 2º do Estatuto da Cidade (Lei 10.257/2001)"}
+      ]
+    },
+    {
+      "titulo": "Temas relacionados à juventude",
+      "desc": "Aqui estão assuntos especialmente acessíveis aos estudantes, pois fazem parte da realidade deles.",
+      "itens": [
+        {"n":16,"tema":"Os desafios para combater a evasão escolar no Brasil","citacao":"A educação é a arma mais poderosa que você pode usar para mudar o mundo.","fonte":"Nelson Mandela"},
+        {"n":17,"tema":"A importância da educação financeira entre os jovens brasileiros","citacao":"Quem poupa, tem.","fonte":"ditado popular"},
+        {"n":18,"tema":"Os impactos do desemprego na juventude brasileira","citacao":"O trabalho dignifica o homem.","fonte":"ditado popular"},
+        {"n":19,"tema":"Os desafios para garantir o primeiro emprego aos jovens","citacao":"Toda pessoa tem direito (...) à livre escolha do trabalho (...).","fonte":"Art. 23 da Declaração Universal dos Direitos Humanos"},
+        {"n":20,"tema":"A importância da educação sexual nas escolas brasileiras","citacao":"Informação é a melhor prevenção.","fonte":"lema de campanhas do Ministério da Saúde"},
+        {"n":21,"tema":"Os desafios para combater o bullying no ambiente escolar","citacao":"Ninguém educa ninguém, ninguém se educa a si mesmo, os homens se educam entre si, mediatizados pelo mundo.","fonte":"Paulo Freire, em Pedagogia do Oprimido"},
+        {"n":22,"tema":"A influência dos jogos eletrônicos na vida dos jovens","citacao":"Tudo em excesso faz mal.","fonte":"ditado popular"},
+        {"n":23,"tema":"Os desafios para garantir oportunidades iguais aos estudantes brasileiros","citacao":"Todos são iguais perante a lei, sem distinção de qualquer natureza (...).","fonte":"Art. 5º, caput, da Constituição Federal"},
+        {"n":24,"tema":"A importância do incentivo à leitura entre os jovens","citacao":"Um país se faz com homens e livros.","fonte":"Monteiro Lobato"},
+        {"n":25,"tema":"Os impactos do uso de drogas na juventude brasileira","citacao":"Toda pessoa tem direito a um padrão de vida capaz de assegurar-lhe (...) saúde e bem-estar (...).","fonte":"Art. 25 da Declaração Universal dos Direitos Humanos"},
+        {"n":26,"tema":"A dificuldade de acesso ao ensino superior no Brasil","citacao":"Se a educação sozinha não transforma a sociedade, sem ela tampouco a sociedade muda.","fonte":"Paulo Freire"},
+        {"n":27,"tema":"Os desafios para conciliar trabalho e estudos entre os jovens","citacao":"Toda pessoa tem direito à instrução (...).","fonte":"Art. 26 da Declaração Universal dos Direitos Humanos"},
+        {"n":28,"tema":"A importância da educação no combate à criminalidade juvenil","citacao":"Quem abre uma escola, fecha uma prisão.","fonte":"Victor Hugo"},
+        {"n":29,"tema":"Os desafios para promover a participação dos jovens na sociedade","citacao":"Toda pessoa tem o direito de tomar parte no governo de seu país, diretamente ou por intermédio de representantes (...).","fonte":"Art. 21 da Declaração Universal dos Direitos Humanos"},
+        {"n":30,"tema":"A falta de acesso ao esporte nas comunidades brasileiras","citacao":"O esporte tem o poder de mudar o mundo. Tem o poder de inspirar, de unir as pessoas como pouca coisa tem.","fonte":"Nelson Mandela, discurso no Laureus World Sports Awards (2000)"}
+      ]
+    },
+    {
+      "titulo": "Problemas sociais e direitos da população brasileira",
+      "desc": "Temas que abordam problemas estruturais do país, mas que podem ser compreendidos sem conhecimento técnico aprofundado.",
+      "itens": [
+        {"n":31,"tema":"Os desafios para combater a fome e a insegurança alimentar no Brasil","citacao":"Toda pessoa tem direito a um padrão de vida capaz de assegurar-lhe (...) saúde e bem-estar, inclusive alimentação (...).","fonte":"Art. 25 da Declaração Universal dos Direitos Humanos"},
+        {"n":32,"tema":"A desigualdade de oportunidades entre os brasileiros","citacao":"Todos são iguais perante a lei, sem distinção de qualquer natureza (...).","fonte":"Art. 5º, caput, da Constituição Federal"},
+        {"n":33,"tema":"Os desafios para combater a violência urbana no Brasil","citacao":"A segurança pública (...) é dever do Estado, direito e responsabilidade de todos (...).","fonte":"Art. 144 da Constituição Federal"},
+        {"n":34,"tema":"A importância da segurança no transporte público brasileiro","citacao":"É livre a locomoção no território nacional em tempo de paz (...).","fonte":"Art. 5º, inciso XV, da Constituição Federal"},
+        {"n":35,"tema":"Os desafios para garantir saneamento básico à população","citacao":"Todos têm direito ao meio ambiente ecologicamente equilibrado (...), essencial à sadia qualidade de vida.","fonte":"Art. 225, caput, da Constituição Federal"},
+        {"n":36,"tema":"A precariedade da infraestrutura nas periferias brasileiras","citacao":"O direito a cidades sustentáveis [entende-se como] o direito à terra urbana, à moradia, à infraestrutura urbana (...).","fonte":"Art. 2º do Estatuto da Cidade (Lei 10.257/2001)"},
+        {"n":37,"tema":"Os desafios para combater a exploração do trabalho no Brasil","citacao":"Ninguém será submetido a escravidão ou servidão (...).","fonte":"Art. 4º da Declaração Universal dos Direitos Humanos"},
+        {"n":38,"tema":"A importância da inclusão social de pessoas em situação de pobreza","citacao":"Constituem objetivos fundamentais da República (...) erradicar a pobreza e a marginalização e reduzir as desigualdades sociais e regionais.","fonte":"Art. 3º, inciso III, da Constituição Federal"},
+        {"n":39,"tema":"Os desafios para combater a corrupção no cotidiano brasileiro","citacao":"A administração pública (...) obedecerá aos princípios de legalidade, impessoalidade, moralidade, publicidade e eficiência.","fonte":"Art. 37, caput, da Constituição Federal"},
+        {"n":40,"tema":"A importância do acesso à saúde pública de qualidade","citacao":"A saúde é direito de todos e dever do Estado (...).","fonte":"Art. 196 da Constituição Federal"},
+        {"n":41,"tema":"Os desafios para garantir atendimento médico nas regiões afastadas","citacao":"São de relevância pública as ações e serviços de saúde (...).","fonte":"Art. 197 da Constituição Federal"},
+        {"n":42,"tema":"A situação dos moradores de rua nas cidades brasileiras","citacao":"A dignidade da pessoa humana (...) [é fundamento da República Federativa do Brasil].","fonte":"Art. 1º, inciso III, da Constituição Federal"},
+        {"n":43,"tema":"Os desafios para reduzir os acidentes de trânsito no Brasil","citacao":"O trânsito, em condições seguras, é um direito de todos (...).","fonte":"Art. 1º, §2º, do Código de Trânsito Brasileiro"},
+        {"n":44,"tema":"A importância da defesa civil na proteção da população","citacao":"São invioláveis o direito à vida, à liberdade, à igualdade, à segurança e à propriedade (...).","fonte":"Art. 5º, caput, da Constituição Federal"},
+        {"n":45,"tema":"Os desafios para garantir acessibilidade nos espaços públicos","citacao":"Promover o bem de todos, sem preconceitos de origem, raça, sexo, cor, idade e quaisquer outras formas de discriminação.","fonte":"Art. 3º, inciso IV, da Constituição Federal"}
+      ]
+    },
+    {
+      "titulo": "Temas sobre cultura, sociedade e identidade brasileira",
+      "desc": "São temas que permitem trabalhar a realidade nacional, os costumes, a cultura e a preservação de elementos importantes do Brasil.",
+      "itens": [
+        {"n":46,"tema":"Os desafios para preservar o patrimônio histórico brasileiro","citacao":"O Estado garantirá a todos o pleno exercício dos direitos culturais (...) e apoiará e incentivará a valorização e a difusão das manifestações culturais.","fonte":"Art. 215, caput, da Constituição Federal"},
+        {"n":47,"tema":"A importância da preservação das festas populares brasileiras","citacao":"Constituem patrimônio cultural brasileiro os bens de natureza material e imaterial (...) portadores de referência à identidade, à ação, à memória dos diferentes grupos formadores da sociedade brasileira.","fonte":"Art. 216, caput, da Constituição Federal"},
+        {"n":48,"tema":"Os desafios para valorizar a cultura regional brasileira","citacao":"O Brasil não é para principiantes.","fonte":"frase amplamente atribuída a Tom Jobim"},
+        {"n":49,"tema":"A importância do turismo para o desenvolvimento das cidades brasileiras","citacao":"Conhecer o próprio país é o primeiro passo para valorizá-lo.","fonte":"ditado popular"},
+        {"n":50,"tema":"Os desafios para preservar a culinária tradicional brasileira","citacao":"Comida de mãe não tem preço.","fonte":"ditado popular brasileiro"},
+        {"n":51,"tema":"A importância da valorização dos artistas independentes no Brasil","citacao":"A arte é a mentira que nos permite conhecer a verdade.","fonte":"Pablo Picasso"},
+        {"n":52,"tema":"Os desafios para preservar os espaços públicos brasileiros","citacao":"As cidades têm a capacidade de oferecer algo para todos somente quando são criadas por todos.","fonte":"Jane Jacobs, urbanista"},
+        {"n":53,"tema":"A importância da preservação dos museus e bibliotecas públicas","citacao":"Um país se faz com homens e livros.","fonte":"Monteiro Lobato"},
+        {"n":54,"tema":"Os desafios para combater o abandono de animais no Brasil","citacao":"É vedada (...) qualquer prática que submeta os animais a crueldade.","fonte":"Art. 225, §1º, inciso VII, da Constituição Federal"},
+        {"n":55,"tema":"A importância da preservação dos rios brasileiros","citacao":"Só quando a última árvore for derrubada, o último rio for poluído e o último peixe for pescado, é que o homem vai perceber que não pode comer dinheiro.","fonte":"dito popular de autoria contestada, amplamente repetido em discussões ambientais no Brasil"},
+        {"n":56,"tema":"Os desafios para combater o desperdício de alimentos no Brasil","citacao":"Comida não se joga fora, se partilha.","fonte":"ditado popular, usado em campanhas contra o desperdício"},
+        {"n":57,"tema":"A importância da coleta seletiva e da reciclagem no Brasil","citacao":"Todos têm direito ao meio ambiente ecologicamente equilibrado (...), impondo-se (...) o dever de defendê-lo e preservá-lo para as presentes e futuras gerações.","fonte":"Art. 225, caput, da Constituição Federal"},
+        {"n":58,"tema":"Os desafios para combater o desmatamento no território brasileiro","citacao":"No início eu pensava que estava lutando para salvar as árvores da seringueira, depois pensei que estava lutando para salvar a floresta amazônica. Agora percebo que estou lutando pela humanidade.","fonte":"Chico Mendes"},
+        {"n":59,"tema":"A importância da preservação da biodiversidade brasileira","citacao":"A Floresta Amazônica brasileira é patrimônio nacional, e sua utilização far-se-á (...) dentro de condições que assegurem a preservação do meio ambiente (...).","fonte":"Art. 225, §4º, da Constituição Federal"},
+        {"n":60,"tema":"Os desafios para garantir o desenvolvimento sustentável das cidades brasileiras","citacao":"Desenvolvimento sustentável é aquele que atende às necessidades do presente sem comprometer a capacidade das gerações futuras de atender às suas próprias necessidades.","fonte":"Relatório Brundtland, Nosso Futuro Comum (ONU, 1987)"}
+      ]
+    },
+    {
+      "titulo": "Temas sobre direitos e convivência social",
+      "desc": "Temas que tratam da convivência, do respeito mútuo e da proteção nas relações cotidianas.",
+      "itens": [
+        {"n":61,"tema":"Os desafios para combater a violência contra crianças no Brasil","citacao":"É dever da família, da sociedade e do Estado assegurar à criança e ao adolescente, com absoluta prioridade, (...) colocando-os a salvo de toda forma de negligência, discriminação, exploração, violência, crueldade e opressão.","fonte":"Art. 227 da Constituição Federal"},
+        {"n":62,"tema":"A importância da responsabilidade dos pais na formação dos filhos","citacao":"É dever da família, da sociedade e do Estado assegurar à criança, ao adolescente e ao jovem, com absoluta prioridade, o direito à vida, à saúde, (...) à educação (...).","fonte":"Art. 227, caput, da Constituição Federal"},
+        {"n":63,"tema":"Os desafios para combater a violência no ambiente familiar","citacao":"Toda mulher goza dos direitos humanos fundamentais (...), devendo ser-lhe asseguradas as condições para o exercício efetivo do direito à vida, à segurança (...) e à convivência familiar e comunitária.","fonte":"Art. 2º da Lei 11.340/2006 (Lei Maria da Penha)"},
+        {"n":64,"tema":"A importância do respeito aos direitos dos consumidores na internet","citacao":"É proibida a publicidade enganosa ou abusiva.","fonte":"Art. 37 do Código de Defesa do Consumidor"},
+        {"n":65,"tema":"Os desafios para combater a exploração de trabalhadores brasileiros","citacao":"Ninguém será submetido a escravidão ou servidão (...).","fonte":"Art. 4º da Declaração Universal dos Direitos Humanos"},
+        {"n":66,"tema":"A importância da proteção de pessoas vítimas de golpes financeiros","citacao":"São direitos básicos do consumidor (...) a efetiva prevenção e reparação de danos patrimoniais e morais (...).","fonte":"Art. 6º, inciso VI, do Código de Defesa do Consumidor"},
+        {"n":67,"tema":"Os desafios para combater a discriminação no mercado de trabalho","citacao":"Promover o bem de todos, sem preconceitos de origem, raça, sexo, cor, idade e quaisquer outras formas de discriminação.","fonte":"Art. 3º, inciso IV, da Constituição Federal"},
+        {"n":68,"tema":"A importância da participação popular nas decisões políticas","citacao":"Todo o poder emana do povo, que o exerce por meio de representantes eleitos ou diretamente (...).","fonte":"Art. 1º, parágrafo único, da Constituição Federal"},
+        {"n":69,"tema":"Os desafios para garantir o acesso à documentação básica no Brasil","citacao":"Todo ser humano tem o direito de ser, em todos os lugares, reconhecido como pessoa ante a lei.","fonte":"Art. 6º da Declaração Universal dos Direitos Humanos"},
+        {"n":70,"tema":"A importância da educação para a formação de cidadãos conscientes","citacao":"A educação é a arma mais poderosa que você pode usar para mudar o mundo.","fonte":"Nelson Mandela"}
+      ]
+    }
+  ],
+  "destaques": {
+    "titulo": "Os 15 temas mais interessantes",
+    "desc": "Seleção pensada para jovens de diferentes realidades sociais, priorizando o que é mais fácil de entender, mais próximo do dia a dia e o que permite construir argumentos sem exigir conhecimento muito específico.",
+    "itens": [
+      {"n":17,"porque":"Todos lidam ou lidarão com dinheiro."},
+      {"n":19,"porque":"Relaciona-se diretamente ao futuro profissional."},
+      {"n":16,"porque":"Está ligada à realidade dos estudantes."},
+      {"n":21,"porque":"Experiência próxima do ambiente escolar."},
+      {"n":4,"porque":"Problema visível na sociedade."},
+      {"n":31,"porque":"Questão humana e facilmente compreensível."},
+      {"n":18,"porque":"Relaciona-se às oportunidades de trabalho."},
+      {"n":30,"porque":"Presente na realidade de muitas comunidades."},
+      {"n":28,"porque":"Permite discutir oportunidades e prevenção."},
+      {"n":56,"porque":"Acontece no cotidiano das famílias."},
+      {"n":34,"porque":"Experiência comum nas cidades."},
+      {"n":3,"porque":"Todos compram produtos e contratam serviços."},
+      {"n":40,"porque":"Experiência conhecida pela população."},
+      {"n":35,"porque":"Problema concreto das cidades brasileiras."},
+      {"n":55,"porque":"Permite discutir meio ambiente e responsabilidade social."}
+    ]
+  }
+}
