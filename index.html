@@ -807,19 +807,22 @@ function showLogin(){
   renderCombo(); renderPodium();
 }
 function route(){
-  if(!S.me){ showLogin(); return; }
   const map = {linguagens:'L', humanas:'H', natureza:'N', matematica:'M', redacao:'R', temas:'T', ranking:'K'};
   const h = (location.hash||'').slice(1) || (location.pathname||'').replace(/^\/+/,'').replace(/\/+$/,'');
   const v = map[h] || 'L';
+  if(!S.me && v!=='T'){ showLogin(); return; }
   if(v !== view){ view = v; window.scrollTo(0,0); }
   document.querySelectorAll('nav a[data-v]').forEach(a => a.setAttribute('aria-current', a.dataset.v===v ? 'page' : 'false'));
+  $('#login').hidden = true; $('#app').hidden = false;
   renderView();
 }
 function renderHeader(){
-  const u = myUser(); if(!u) return;
-  $('#meName').textContent = u.name;
-  const p = $('#mePts'), txt = (u.points||0)+' pts';
-  if(p.textContent !== txt){ p.textContent = txt; }
+  const u = myUser(), nameEl = $('#meName'), ptsEl = $('#mePts'), logoutBtn = $('#logoutBtn');
+  nameEl.hidden = ptsEl.hidden = logoutBtn.hidden = !u;
+  if(!u) return;
+  nameEl.textContent = u.name;
+  const txt = (u.points||0)+' pts';
+  if(ptsEl.textContent !== txt){ ptsEl.textContent = txt; }
 }
 function renderView(){
   renderHeader();
@@ -1225,10 +1228,10 @@ bindLogin();
     try{
       const s = JSON.parse(saved); await storeReady;
       S.me = await claimUser(s.name);
-      watchAnswers(); enterApp(); return;
+      watchAnswers();
     }catch{}
   }
-  showLogin();
+  route();
 })();
 })();
 </script>
